@@ -91,7 +91,7 @@ to model three regimes:
 
 These perturbations follow established theoretical frameworks: reduced NMDA destabilizes prefrontal working memory attractors in SCZ {cite:p}`loh2007dynamical, rolls2008computational`, whereas increased glutamatergic drive over-deepens attractor basins in OCD {cite:p}`rolls2008attractor`. Biologically, the −5% reduction reflects moderate post-mortem NMDA-receptor hypofunction estimates in SCZ {cite:p}`catts2016quantitative`; a conservative value was chosen to avoid a global excitability collapse. The +10% increase reflects glutamatergic overactivity reported in OCD {cite:p}`pittenger2011glutamate`. Because the OCD direction is less precisely constrained experimentally, the larger value serves as an illustrative operating point. Both values define illustrative regimes rather than exact disease-calibrated magnitudes; as Figure S1 demonstrates, qualitative transitions remain robust across the perturbation range.
 
-```{figure} Fig1.png
+```{figure} Paper/Fig1.png
 :name: figure-main
 :alt: NMDA bidirectionally regulates the recurrent coupling threshold for persistent working memory activity.
 
@@ -172,7 +172,7 @@ similar changes in the decay timescale without necessarily reshaping the attract
 Disambiguating these alternatives would require explicit computation of the flow field, as in
 {cite:p}`loh2007dynamical`, and is left for future work.
 
-```{figure} stq.png
+```{figure} Paper/stq.png
 :name: figure-stats
 :alt: Statistical analysis of lambda_delay across conditions showing mean SD distributions and correlation with attractor robustness.
 

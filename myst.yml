@@ -101,7 +101,7 @@ project:
   github: https://github.com/impact-scholars/isp-micropublication-template
 
   bibliography:
-    - bib.bib
+    - Paper/bib.bib
 site:
   template: book-theme
 
