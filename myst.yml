@@ -1,16 +1,20 @@
 version: 1
-
+extends:
+- https://raw.githubusercontent.com/impact-scholars/impact-scholars.github.io/v0.2.0/nexus.yml
+- https://raw.githubusercontent.com/impact-scholars/isp-actions-config/v0.2.0/isp-micropublication-2025.yml
 
 project:
   # doi: 10.5281/zenodo.XXXXXXX
   # date: YYYY-MM-DD
 
   authors:
-    - name: Tahiri, H.
+    - name: Hamza Tahiri
       affiliations:
         - Faculty of Science, Laboratory of Biology and Health, Abdelmalek Essaâdi University, Av. Khenifra, Tetouan, 93000, Morocco
         - Department of Biology and Geology, Biological Engineering Laboratory, Sultan Moulay Slimane University, Beni-Mellal, Morocco
         - Neuromatch
+      email: tahirihamza573@gmail.com
+      corresponding: true
       
       roles:
         - Conceptualization
@@ -23,7 +27,7 @@ project:
         - Writing - original draft
         - Writing - review & editing
 
-    - name: Zare, R.
+    - name: Razieh Zare
       affiliations:
         - Department of Linguistics, Faculty of Foreign languages, University of Isfahan, Isfahan, Iran
         - Neuromatch
@@ -37,7 +41,7 @@ project:
         - Writing - original draft
         - Writing - review & editing
 
-    - name: Amidizade, F.
+    - name: Fateme Amidizade
       affiliations:
         - Department of Educational Sciences and Psychology, Shiraz University, Shiraz, Iran
         - Neuromatch
@@ -52,7 +56,7 @@ project:
         - Writing - review & editing
 
 
-    - name: Chakir, I.
+    - name: Ibtissam Chakir
       affiliations:
         - Faculty of Science, Laboratory of Biology and Health, Abdelmalek Essaâdi University, Av. Khenifra, Tetouan, 93000, Morocco
         - Department of Biology and Geology, Biological Engineering Laboratory, Sultan Moulay Slimane University, Beni-Mellal, Morocco
@@ -65,10 +69,12 @@ project:
 
 
 
-    - name: Kumar, A.
+    - name: Arvind Kumar
       affiliations:
         - Department of Computational Science and Technology, School of Electrical Engineering and Computer Science, KTH Royal Institute of Technology, 11428 Stockholm, Sweden Science for Life Laboratory, 171 65 Solna, Sweden
         - Neuromatch
+      email: arvind.k.panchal@gmail.com
+      corresponding: true
       
       roles:
         - Conceptualization
@@ -85,9 +91,10 @@ project:
 
   toc:
     - file: index.md
+    - file: Paper/supplement.md
 
-  id: nmda-wm-attractor-stability-2026
-  title: "NMDA Controls Working Memory Attractor Stability: Opposite Regimes Produce Schizophrenia-like Instability and OCD-like Overstability"
+  id: isp-tahiri-2026-working-memory-model
+  title: "NMDA Modulates Working Memory Attractor Stability: Opposite Regimes Can Produce Schizophrenia-like Instability and OCD-like Overstability"
 
   keywords:
     - working memory
@@ -98,11 +105,19 @@ project:
 
   
 
-  github: https://github.com/impact-scholars/isp-micropublication-template
+  github: https://github.com/impact-scholars/tahiri-2026-working-memory-model
 
   bibliography:
     - Paper/bib.bib
-site:
-  template: book-theme
+
+  exports:
+    - format: typst
+      id: typst-pdf
+      template: https://github.com/impact-scholars/isp-lapreprint-typst.git
+      articles:
+        - file: index.md
+          title: null
+        - file: Paper/supplement.md
+          title: null
 
 

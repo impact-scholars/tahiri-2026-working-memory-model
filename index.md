@@ -1,7 +1,5 @@
 ---
 title: "NMDA Modulates Working Memory Attractor Stability: Opposite Regimes Can Produce Schizophrenia-like Instability and OCD-like Overstability"
-exports:
-  - format: typst
 abstract: |
     Working memory (WM) depends on the sustained, selective firing of prefrontal neurons during a delay
     period — a property implemented in computational models as a stable attractor state. NMDA receptors
@@ -19,12 +17,8 @@ abstract: |
 
 acknowledgments: |
     This work was supported by the Impact Scholars Program 2025. The first author is supported by the CNRST PASS doctoral scholarship program. The authors thank Archishman Biswas for his technical support with the simulation code, helpful discussions, and guidance that greatly contributed to the development of this work. The authors used AI assistance (Claude, Anthropic) to assist with scientific writing and code review during the preparation of this manuscript. All scientific content, results, and conclusions were verified and approved by the authors.
-
-    **Correspondence:** Tahiri, H. (tahirihamza573@gmail.com) and Kumar, A. (arvind.k.panchal@gmail.com)
 ---
 
-
-# Description
 
 Working memory (WM) is the ability to hold information in mind over a brief delay in the absence of
 sensory input. At its neural substrate lies a prefrontal cortical circuit capable of sustaining elevated, selective firing
@@ -89,7 +83,18 @@ to model three regimes:
 | **SCZ (−NMDA)** | 0.95 | 1.00 | −5% NMDA (receptor hypofunction) |
 | **OCD (+NMDA)** | 1.10 | 1.00 | +10% NMDA (receptor hyperfunction) |
 
-These perturbations follow established theoretical frameworks: reduced NMDA destabilizes prefrontal working memory attractors in SCZ {cite:p}`loh2007dynamical, rolls2008computational`, whereas increased glutamatergic drive over-deepens attractor basins in OCD {cite:p}`rolls2008attractor`. Biologically, the −5% reduction reflects moderate post-mortem NMDA-receptor hypofunction estimates in SCZ {cite:p}`catts2016quantitative`; a conservative value was chosen to avoid a global excitability collapse. The +10% increase reflects glutamatergic overactivity reported in OCD {cite:p}`pittenger2011glutamate`. Because the OCD direction is less precisely constrained experimentally, the larger value serves as an illustrative operating point. Both values define illustrative regimes rather than exact disease-calibrated magnitudes; as Figure S1 demonstrates, qualitative transitions remain robust across the perturbation range.
+These perturbations follow established theoretical frameworks: reduced NMDA destabilizes prefrontal working memory attractors in SCZ {cite:p}`loh2007dynamical, rolls2008computational`, whereas increased glutamatergic drive over-deepens attractor basins in OCD {cite:p}`rolls2008attractor`. Biologically, the −5% reduction reflects moderate post-mortem NMDA-receptor hypofunction estimates in SCZ {cite:p}`catts2016quantitative`; a conservative value was chosen to avoid a global excitability collapse. The +10% increase reflects glutamatergic overactivity reported in OCD {cite:p}`pittenger2011glutamate`. Because the OCD direction is less precisely constrained experimentally, the larger value serves as an illustrative operating point. Both values define illustrative regimes rather than exact disease-calibrated magnitudes; as [](#fig-nmda-sweep) demonstrates, qualitative transitions remain robust across the perturbation range.
+
+```{note} How to read $\lambda_{\mathrm{delay}}$ in the figure
+[](#figure-main)D is the key diagnostic plot. Each curve shows how
+$\lambda_{\mathrm{delay}}$ changes as the recurrent synaptic weight $J_p$ increases (x-axis).
+**Curves that stay above the dashed threshold** ($\lambda_{\mathrm{delay}} = 5$) represent conditions where the
+network consistently *fails* to maintain working memory — high decay, fast collapse.
+**Curves that drop into the shaded persistence zone** represent conditions where memory is
+robustly held. The steepness of the drop tells you how sensitive that regime is to changes in $J_p$:
+a sharp drop (OCD-like) means memory locks in easily; a shallow or absent drop (SCZ-like) means the
+network rarely succeeds at all.
+```
 
 ```{figure} Paper/Fig1.png
 :name: figure-main
@@ -111,27 +116,18 @@ zone ($\lambda_{\mathrm{delay}} < 5$). Conditions are distinguished by line styl
 to ensure accessibility.
 ```
 
-```{note} How to read $\lambda_{\mathrm{delay}}$ in the figure
-**Figure 1-D** of @figure-main is the key diagnostic plot. Each curve shows how
-$\lambda_{\mathrm{delay}}$ changes as the recurrent synaptic weight $J_p$ increases (x-axis).
-**Curves that stay above the dashed threshold** ($\lambda_{\mathrm{delay}} = 5$) represent conditions where the
-network consistently *fails* to maintain working memory — high decay, fast collapse.
-**Curves that drop into the shaded persistence zone** represent conditions where memory is
-robustly held. The steepness of the drop tells you how sensitive that regime is to changes in $J_p$:
-a sharp drop (OCD-like) means memory locks in easily; a shallow or absent drop (SCZ-like) means the
-network rarely succeeds at all.
-```
+
 
 Panels A–C of @figure-main illustrate single-trial population rate traces for three representative
-conditions at $J_p = 1.84$. In Figure 1A (control, $\lambda_{\mathrm{delay}} = 1.751$), the S1 pool
-ramps up during stimulation and sustains elevated activity at ~20 Hz throughout the delay, indicating a successful WM maintenance. The competing pools (S2, NS) remain near baseline. In Figure1B
+conditions at $J_p = 1.84$. In [](#figure-main)A (control, $\lambda_{\mathrm{delay}} = 1.751$), the S1 pool
+ramps up during stimulation and sustains elevated activity at ~20 Hz throughout the delay, indicating a successful WM maintenance. The competing pools (S2, NS) remain near baseline. In [](#figure-main)B
 (OCD-like, $\lambda_{\mathrm{delay}} = 1.059$), the memory attractor is even more robust: activity
 is sustained at higher rates ~45 Hz, reflecting an over-deepened basin of
-attraction. In contrast, Figure1C (SCZ-like, $\lambda_{\mathrm{delay}} = 28.360$) shows activity
+attraction. In contrast, [](#figure-main)C (SCZ-like, $\lambda_{\mathrm{delay}} = 28.360$) shows activity
 that collapses rapidly after cue offset, returning to baseline before the end of the delay, the
 attractor basin is too shallow to resist noise-driven escape.
 
-Figure1D reveals the full picture across the $J_p$ sweep. For the **control condition**, the network
+[](#figure-main)D reveals the full picture across the $J_p$ sweep. For the **control condition**, the network
 enters the persistence zone ($\lambda_{\mathrm{delay}} < 5$) at intermediate $J_p$ (~1.84-1.86),
 reflecting a tuned operating point. For the **SCZ-like condition**, $\lambda_{\mathrm{delay}}$
 remains elevated across nearly the entire $J_p$ range, until higher values of $J_p$ (> 1.86). For the **OCD-like condition**, the system drops into the persistence zone at

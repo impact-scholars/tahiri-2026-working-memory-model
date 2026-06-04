@@ -2,32 +2,25 @@
 title: 'Supplementary Information — NMDA Modulates Working Memory Attractor Stability'
 short_title: Supplementary Information
 subtitle: 'Opposite Regimes Can Produce Schizophrenia-like Instability and OCD-like Overstability'
-authors:
-  - name: H. Tahiri
-  - name: R. Zare
-  - name: F. Amidizade
-  - name: I. Chakir
-  - name: A. Kumar
-exports:
-  - format: typst
-numbering:
-  headings: true
-  equation: true
-  figure: true
-  table: true
-bibliography: bib.bib
 abstract: |
   This document contains the supplementary figures, tables, and extended methods supporting the main manuscript regarding NMDA modulation of working memory attractors.
+numbering:
+  figure:
+    continue: true
 ---
+
+```{raw:typst}
+#set heading(numbering: none)
+```
 
 # Supplementary Figures
 This supplement gives the complete mathematical description of the spiking network ([](#sec-model)), the exact parameter values used in all simulations ([](#tab-neuron)–[](#tab-arch)), the definition of the $\lambda_{\mathrm{delay}}$ metric ([](#sec-lambda)), the multi-seed statistical protocol ([](#sec-stats)), a supplementary NMDA-conductance sweep ([](#fig-nmda-sweep)), and the full statistical tables ([](#sec-tables)). The model follows the integrate-and-fire framework of  {cite:p}`loh2007dynamical` as used by 
-{cite:p}`loh2007dynamical`,and was implemented in Brian2 {cite:p}`stimberg2019brian2`.
+{cite:p}`loh2007dynamical`, and was implemented in Brian2 {cite:p}`stimberg2019brian2`.
 
 (sec-model)=
-## S1. Network model
+## Network model
 
-### S1.1 Single-neuron dynamics
+### Single-neuron dynamics
 
 Both excitatory ($E$) and inhibitory ($I$) cells are leaky integrate-and-fire neurons. The subthreshold membrane potential $V$ obeys
 
@@ -43,7 +36,7 @@ with cell-type-specific $C_m$ and $g_L$ ([](#tab-neuron)). When $V$ reaches the 
 I_{\mathrm{syn}}(t) = I_{\mathrm{AMPA,ext}}(t) + I_{\mathrm{AMPA,rec}}(t) + I_{\mathrm{NMDA,rec}}(t) + I_{\mathrm{GABA}}(t).
 ```
 
-### S1.2 Synaptic currents
+### Synaptic currents
 
 AMPA (external and recurrent) and GABA$_{\mathrm A}$ currents are
 
@@ -77,7 +70,7 @@ and $s^{\mathrm{tot}}_{\mathrm{NMDA}}$ denotes the gating summed over the presyn
 
 
 
-### S1.3 Architecture and connectivity
+### Architecture and connectivity
 
 The network contains $N=2000$ neurons: $N_E=1600$ excitatory ($f_{\mathrm{inh}}=0.20$) and $N_I=400$ inhibitory. The excitatory population is split into two selective pools $S_1$ and $S_2$ of $240$ neurons each ($f_{\mathrm{sel}}=0.15$ of $N_E$) and a non-selective pool (NS) of $1120$ neurons. The inhibitory pool provides global feedback inhibition. Recurrent excitation is structured by a within-pool potentiation factor $J_p$ and a compensating cross-pool factor
 
@@ -88,11 +81,11 @@ J_m = 1 - f_{\mathrm{sel}}\,\frac{J_p-1}{1-f_{\mathrm{sel}}},
 
 which keeps the mean recurrent input constant as $J_p$ varies. Excitatory–excitatory AMPA weights are $g_{\mathrm{EEA}}$ (baseline), $g_{\mathrm{EEA}}J_p$ (within a selective pool) and $g_{\mathrm{EEA}}J_m$ (between selective pools); recurrent NMDA is pooled analogously. $E -> I$, $I -> E$ and $I -> I$ connections are all-to-all with weights $g_{\mathrm{EIA}}$, $g_{\mathrm{IE}}$ and $g_{\mathrm{II}}$ respectively. Base conductances ([](#tab-cond)) are calibrated for $N=2000$ and rescaled by $1600/N_E$ (excitatory) and $400/N_I$ (inhibitory) for other network sizes.
 
-### S1.4 Background input and stimulation protocol
+### Background input and stimulation protocol
 
 Every neuron receives $N_{\mathrm{ext}}=800$ independent external AMPA synapses driven by Poisson spike trains at $3\ \mathrm{Hz}$ each ($2.4\ \mathrm{kHz}$ aggregate), reproducing cortical spontaneous activity. A $200\ \mathrm{ms}$ spontaneous period is followed by a cue of $200\ \mathrm{Hz}$ applied to $S_1$ over $t\in[200,700]\ \mathrm{ms}$, then a delay period $[700,1200]\ \mathrm{ms}$. An optional distractor is applied to $S_2$ over $[800,1100]\ \mathrm{ms}$ at either $0$ or $200\ \mathrm{Hz}$. Total simulation time is $1200\ \mathrm{ms}$. Equations were integrated with the forward Euler method at $dt=0.02\ \mathrm{ms}$; independent trials differ only in random seed.
 
-### S1.5 Modelled regimes
+### Modelled regimes
 
 NMDA and GABA conductances are scaled multiplicatively relative to control. The three main-text regimes hold $g_{\mathrm{GABA}}$ fixed and vary $g_{\mathrm{NMDA}}$: control ($1.00$), SCZ-like ($0.95$, $-5\%$) and OCD-like ($1.10$, $+10\%$). The effective recurrent NMDA conductance is therefore $g_{\mathrm{EEN}}\times\{0.95,1.00,1.10\}=\{0.157,0.165,0.182\}\ \mathrm{nS}$.
 
@@ -143,12 +136,12 @@ NMDA and GABA conductances are scaled multiplicatively relative to control. The 
 ```
 
 (sec-lambda)=
-## S2. The $\lambda_{\mathrm{delay}}$ metric
+## The $\lambda_{\mathrm{delay}}$ metric
 
 Population firing rates were obtained from spike-count histograms smoothed with a flat (rectangular) sliding window of width $50\ \mathrm{ms}$. During the delay we form the differential rate $\Delta r(t)=r_{S_1}(t)-r_{S_2}(t)$ and fit a single exponential $\Delta r(t)=A\,e^{-\lambda t}$ to its post-peak segment by linear regression of $\log \Delta r$. The fit is evaluated over the window $[\,t_{\mathrm{off}}+100\ \mathrm{ms},\ t_{\mathrm{end}}-50\ \mathrm{ms}\,]$, starting from the peak of $\Delta r$ within that window so that the post-cue rising transient does not bias the estimate. Small $\lambda_{\mathrm{delay}}$ indicates stable maintenance; large $\lambda_{\mathrm{delay}}$ indicates rapid collapse. We define a persistence zone as $\lambda_{\mathrm{delay}}<5\ \mathrm{s^{-1}}$ (half-life $\approx 139\ \mathrm{ms}$); equivalently $1/\lambda_{\mathrm{delay}}>0.2\ \mathrm{s}$. Networks that never encode the cue or that enter a runaway state return an undefined ($\mathrm{NaN}$) value and are treated as a separate failure category rather than as $\lambda=0$.
 
 (sec-stats)=
-## S3. Multi-seed statistical protocol
+## Multi-seed statistical protocol
 
 To characterise stability beyond single realisations, each parameter combination was simulated with $19$ independent random seeds. The analysis grid crossed six NMDA/GABA conductance settings — $(g_{\mathrm{NMDA}}/g_{\mathrm{GABA}})\in\{(0.8/0.4),(0.9/0.3),(1.0/0.3),(1.0/0.6),(1.1/0.4),(1.1/0.6)\}$ — with two recurrent weights ($J_p=1.75$ and $1.88$), run separately with and without the $S_2$ distractor. Because per-condition $\lambda_{\mathrm{delay}}$ distributions departed from normality (Shapiro–Wilk), non-parametric tests were used throughout: Kruskal–Wallis across conditions (with $\eta^2$ effect size), pairwise Mann–Whitney $U$ with Bonferroni correction, and Spearman rank correlations between $\lambda_{\mathrm{delay}}$ and other delay-period metrics. [](#tab-desc)–[](#tab-spear) report the with-distractor analysis used for the main-text statistics.
 
@@ -161,7 +154,7 @@ To characterise stability beyond single realisations, each parameter combination
 ```
 
 (sec-tables)=
-## S4. Statistical tables
+## Statistical tables
 
 ```{table} Descriptive statistics of $\lambda_{\mathrm{delay}}$ (s$^{-1}$) in the persistent regime, seed-level means, with distractor. $n$ is the number of seeds (of $19$) that reached the persistent regime for that cell.
 :label: tab-desc
