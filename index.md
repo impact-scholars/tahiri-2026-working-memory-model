@@ -15,6 +15,8 @@ abstract: |
     instability and overstability, emerge from the same parameter and suggest a possible mechanistic
     axis that could link two clinically distinct psychiatric conditions.
 
+data_availability: |
+    Published via [Impact Scholars](https://github.com/impact-scholars/tahiri-2026-working-memory-model); original [development repository](https://github.com/HamzaTh573/Working-Memory-Model-ISP).
 acknowledgments: |
     This work was supported by the Impact Scholars Program 2025. The first author is supported by the CNRST PASS doctoral scholarship program. The authors thank Archishman Biswas for his technical support with the simulation code, helpful discussions, and guidance that greatly contributed to the development of this work. The authors used AI assistance (Claude, Anthropic) to assist with scientific writing and code review during the preparation of this manuscript. All scientific content, results, and conclusions were verified and approved by the authors.
 ---
