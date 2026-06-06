@@ -1,0 +1,238 @@
+==============================================================================
+STATISTICAL ANALYSIS REPORT
+Attractor Network Simulations — Schizophrenia/OCD Computational Model
+==============================================================================
+
+Dataset: 240 trials  |  6 conditions  |  Jp values: [1.75, 1.88]
+NMDA scales: [0.8, 0.9, 1.0, 1.1]   GABA scales: [0.3, 0.4, 0.6]
+
+──────────────────────────────────────────────────────────────────────────────
+1. DESCRIPTIVE STATISTICS (per condition)
+──────────────────────────────────────────────────────────────────────────────
+
+  snr_delay — SNR during delay (working memory fidelity)
+  Condition                                        N      Mean        SD    Median
+  ------------------------------------------------------------------------------
+  point 1                                         40    93.242    61.970    79.527
+  point 2                                         40    18.953    12.255    15.825
+  point 3                                         40    33.928    22.447    29.952
+  point 4                                         40   139.281    90.322   119.199
+  point 5                                         40   157.017    91.463   141.668
+  point 6                                         40    66.464    43.992    58.303
+
+  attractor_robustness — Attractor robustness
+  Condition                                        N      Mean        SD    Median
+  ------------------------------------------------------------------------------
+  point 1                                         40    30.142    13.087    29.863
+  point 2                                         40    14.811     9.140    12.828
+  point 3                                         40    30.036     8.553    28.280
+  point 4                                         40    46.065    10.542    46.190
+  point 5                                         40    42.862    12.248    41.442
+  point 6                                         40    38.695     9.098    37.777
+
+  r1_delay_mean — Mean S1 firing rate – delay period (Hz)
+  Condition                                        N      Mean        SD    Median
+  ------------------------------------------------------------------------------
+  point 1                                         40    37.624    13.306    38.174
+  point 2                                         40    22.141     8.666    22.227
+  point 3                                         40    37.292     8.439    37.480
+  point 4                                         40    53.015    10.464    53.458
+  point 5                                         40    50.348    12.448    51.121
+  point 6                                         40    45.662     8.624    46.306
+
+  r1_delay_std — Firing-rate variability – delay (Hz)
+  Condition                                        N      Mean        SD    Median
+  ------------------------------------------------------------------------------
+  point 1                                         40     3.364     0.847     3.315
+  point 2                                         40     3.084     0.705     3.017
+  point 3                                         40     2.652     0.720     2.552
+  point 4                                         40     2.848     0.591     2.749
+  point 5                                         40     3.224     0.652     3.160
+  point 6                                         40     2.754     0.629     2.674
+
+  delay_gain — Delay gain (persistent vs. spontaneous)
+  Condition                                        N      Mean        SD    Median
+  ------------------------------------------------------------------------------
+  point 1                                         40    36.852    16.916    32.892
+  point 2                                         40    10.525     4.986     9.616
+  point 3                                         40     6.893     2.524     6.348
+  point 4                                         40    18.479     6.953    17.285
+  point 5                                         40    47.507    18.586    43.743
+  point 6                                         40     7.057     2.599     6.177
+
+  persistent — Fraction persistent trials
+  Condition                                        N      Mean        SD    Median
+  ------------------------------------------------------------------------------
+  point 1                                         40     1.000     0.000     1.000
+  point 2                                         40     0.800     0.405     1.000
+  point 3                                         40     1.000     0.000     1.000
+  point 4                                         40     1.000     0.000     1.000
+  point 5                                         40     1.000     0.000     1.000
+  point 6                                         40     1.000     0.000     1.000
+
+  survives_distractor — Distractor survival rate
+  Condition                                        N      Mean        SD    Median
+  ------------------------------------------------------------------------------
+  point 1                                         40     1.000     0.000     1.000
+  point 2                                         40     1.000     0.000     1.000
+  point 3                                         40     1.000     0.000     1.000
+  point 4                                         40     1.000     0.000     1.000
+  point 5                                         40     1.000     0.000     1.000
+  point 6                                         40     1.000     0.000     1.000
+
+──────────────────────────────────────────────────────────────────────────────
+2. NORMALITY CHECK (Shapiro-Wilk)
+──────────────────────────────────────────────────────────────────────────────
+  point 1                                   snr_delay              W=0.860  p=0.0002  ← non-normal
+  point 1                                   attractor_robustness   W=0.776  p=0.0000  ← non-normal
+  point 1                                   r1_delay_mean          W=0.732  p=0.0000  ← non-normal
+  point 2                                   snr_delay              W=0.806  p=0.0000  ← non-normal
+  point 2                                   attractor_robustness   W=0.792  p=0.0000  ← non-normal
+  point 2                                   r1_delay_mean          W=0.776  p=0.0000  ← non-normal
+  point 3                                   snr_delay              W=0.802  p=0.0000  ← non-normal
+  point 3                                   attractor_robustness   W=0.808  p=0.0000  ← non-normal
+  point 3                                   r1_delay_mean          W=0.743  p=0.0000  ← non-normal
+  point 4                                   snr_delay              W=0.858  p=0.0001  ← non-normal
+  point 4                                   attractor_robustness   W=0.809  p=0.0000  ← non-normal
+  point 4                                   r1_delay_mean          W=0.735  p=0.0000  ← non-normal
+  point 5                                   snr_delay              W=0.879  p=0.0005  ← non-normal
+  point 5                                   attractor_robustness   W=0.793  p=0.0000  ← non-normal
+  point 5                                   r1_delay_mean          W=0.722  p=0.0000  ← non-normal
+  point 6                                   snr_delay              W=0.810  p=0.0000  ← non-normal
+  point 6                                   attractor_robustness   W=0.802  p=0.0000  ← non-normal
+  point 6                                   r1_delay_mean          W=0.744  p=0.0000  ← non-normal
+
+  → 18 non-normal. Using Kruskal-Wallis + Mann-Whitney.
+
+──────────────────────────────────────────────────────────────────────────────
+3. KRUSKAL-WALLIS H-TEST
+──────────────────────────────────────────────────────────────────────────────
+  Metric                                H   df          p  Sig   η²
+
+  snr_delay                       126.162    5 1.5514e-25  ***   0.518
+  attractor_robustness            108.203    5 9.8231e-22  ***   0.441
+  r1_delay_mean                   106.564    5 2.1788e-21  ***   0.434
+  r1_delay_std                     28.596    5 2.7822e-05  ***   0.101
+  delay_gain                      184.732    5 5.2189e-38  ***   0.768
+  persistent                       41.207    5 8.5217e-08  ***   0.155
+  survives_distractor                 nan    5        nan  ns    nan
+
+──────────────────────────────────────────────────────────────────────────────
+4. POST-HOC PAIRWISE (Mann-Whitney + Bonferroni)
+──────────────────────────────────────────────────────────────────────────────
+
+  Metric: snr_delay
+  Pair                                                                                 p_bonf  Sig   r
+  ------------------------------------------------------------------------------
+  point 1 vs point 2                                                                   0.0000  ***   -0.866
+  point 1 vs point 3                                                                   0.0007  ***   -0.531
+  point 1 vs point 4                                                                   0.0158  *     0.426
+  point 1 vs point 5                                                                   0.0051  **    0.466
+  point 1 vs point 6                                                                   0.0175  *     -0.423
+  point 2 vs point 3                                                                   0.0018  **    0.500
+  point 2 vs point 4                                                                   0.0000  ***   0.999
+  point 2 vs point 5                                                                   0.0000  ***   1.000
+  point 2 vs point 6                                                                   0.0001  ***   0.575
+  point 3 vs point 4                                                                   0.0000  ***   0.796
+  point 3 vs point 5                                                                   0.0000  ***   0.944
+  point 3 vs point 6                                                                   0.0018  **    0.500
+  point 4 vs point 5                                                                   1.0000  ns    0.226
+  point 4 vs point 6                                                                   0.0018  **    -0.500
+  point 5 vs point 6                                                                   0.0005  ***   -0.540
+
+  Metric: attractor_robustness
+  Pair                                                                                 p_bonf  Sig   r
+  ------------------------------------------------------------------------------
+  point 1 vs point 2                                                                   0.0010  **    -0.518
+  point 1 vs point 3                                                                   1.0000  ns    0.017
+  point 1 vs point 4                                                                   0.0016  **    0.504
+  point 1 vs point 5                                                                   0.0018  **    0.500
+  point 1 vs point 6                                                                   0.0038  **    0.476
+  point 2 vs point 3                                                                   0.0001  ***   0.600
+  point 2 vs point 4                                                                   0.0000  ***   1.000
+  point 2 vs point 5                                                                   0.0000  ***   0.990
+  point 2 vs point 6                                                                   0.0000  ***   0.995
+  point 3 vs point 4                                                                   0.0001  ***   0.595
+  point 3 vs point 5                                                                   0.0016  **    0.504
+  point 3 vs point 6                                                                   0.0017  **    0.501
+  point 4 vs point 5                                                                   0.1903  ns    -0.324
+  point 4 vs point 6                                                                   0.0024  **    -0.491
+  point 5 vs point 6                                                                   0.1256  ns    -0.343
+
+  Metric: r1_delay_mean
+  Pair                                                                                 p_bonf  Sig   r
+  ------------------------------------------------------------------------------
+  point 1 vs point 2                                                                   0.0018  **    -0.500
+  point 1 vs point 3                                                                   1.0000  ns    0.000
+  point 1 vs point 4                                                                   0.0018  **    0.500
+  point 1 vs point 5                                                                   0.0018  **    0.500
+  point 1 vs point 6                                                                   0.0029  **    0.485
+  point 2 vs point 3                                                                   0.0001  ***   0.595
+  point 2 vs point 4                                                                   0.0000  ***   1.000
+  point 2 vs point 5                                                                   0.0000  ***   1.000
+  point 2 vs point 6                                                                   0.0000  ***   1.000
+  point 3 vs point 4                                                                   0.0010  ***   0.519
+  point 3 vs point 5                                                                   0.0018  **    0.500
+  point 3 vs point 6                                                                   0.0018  **    0.500
+  point 4 vs point 5                                                                   0.1426  ns    -0.337
+  point 4 vs point 6                                                                   0.0018  **    -0.500
+  point 5 vs point 6                                                                   0.0901  ns    -0.357
+
+  Metric: survives_distractor
+  Pair                                                                                 p_bonf  Sig   r
+  ------------------------------------------------------------------------------
+  point 1 vs point 2                                                                   1.0000  ns    0.000
+  point 1 vs point 3                                                                   1.0000  ns    0.000
+  point 1 vs point 4                                                                   1.0000  ns    0.000
+  point 1 vs point 5                                                                   1.0000  ns    0.000
+  point 1 vs point 6                                                                   1.0000  ns    0.000
+  point 2 vs point 3                                                                   1.0000  ns    0.000
+  point 2 vs point 4                                                                   1.0000  ns    0.000
+  point 2 vs point 5                                                                   1.0000  ns    0.000
+  point 2 vs point 6                                                                   1.0000  ns    0.000
+  point 3 vs point 4                                                                   1.0000  ns    0.000
+  point 3 vs point 5                                                                   1.0000  ns    0.000
+  point 3 vs point 6                                                                   1.0000  ns    0.000
+  point 4 vs point 5                                                                   1.0000  ns    0.000
+  point 4 vs point 6                                                                   1.0000  ns    0.000
+  point 5 vs point 6                                                                   1.0000  ns    0.000
+
+──────────────────────────────────────────────────────────────────────────────
+5. CHI-SQUARE: PERSISTENT & SURVIVES_DISTRACTOR × CONDITION
+──────────────────────────────────────────────────────────────────────────────
+
+  persistent: χ²(5)=41.379, p=7.8647e-08  ***  Cramér's V=0.415
+    point 1                                           : 1.000
+    point 2                                           : 0.800
+    point 3                                           : 1.000
+    point 4                                           : 1.000
+    point 5                                           : 1.000
+    point 6                                           : 1.000
+
+  survives_distractor: χ²(0)=0.000, p=1.0000e+00  ns  Cramér's V=nan
+    point 1                                           : 1.000
+    point 2                                           : 1.000
+    point 3                                           : 1.000
+    point 4                                           : 1.000
+    point 5                                           : 1.000
+    point 6                                           : 1.000
+
+──────────────────────────────────────────────────────────────────────────────
+6. Jp EFFECT (Mann-Whitney, Jp=1.75 vs 1.88)
+──────────────────────────────────────────────────────────────────────────────
+  point 1                                       snr_delay                 0.0   0.0000  ***
+  point 1                                       r1_delay_mean             0.0   0.0000  ***
+  point 2                                       snr_delay                 0.0   0.0000  ***
+  point 2                                       r1_delay_mean             0.0   0.0000  ***
+  point 3                                       snr_delay                 0.0   0.0000  ***
+  point 3                                       r1_delay_mean             0.0   0.0000  ***
+  point 4                                       snr_delay                 0.0   0.0000  ***
+  point 4                                       r1_delay_mean             0.0   0.0000  ***
+  point 5                                       snr_delay                 0.0   0.0000  ***
+  point 5                                       r1_delay_mean             0.0   0.0000  ***
+  point 6                                       snr_delay                 0.0   0.0000  ***
+  point 6                                       r1_delay_mean             0.0   0.0000  ***
+
+==============================================================================
+END OF REPORT
+==============================================================================
