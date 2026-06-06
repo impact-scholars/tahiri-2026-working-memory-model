@@ -4,120 +4,110 @@ extends:
 - https://raw.githubusercontent.com/impact-scholars/isp-actions-config/v0.2.0/isp-micropublication-2025.yml
 
 project:
-  # doi: 10.5281/zenodo.XXXXXXX
-  # date: YYYY-MM-DD
-
   authors:
-    - name: Hamza Tahiri
-      affiliations:
-        - Faculty of Science, Laboratory of Biology and Health, Abdelmalek Essaâdi University, Av. Khenifra, Tetouan, 93000, Morocco
-        - Department of Biology and Geology, Biological Engineering Laboratory, Sultan Moulay Slimane University, Beni-Mellal, Morocco
-        - Neuromatch
-      email: tahirihamza573@gmail.com
-      corresponding: true
-      
-      roles:
-        - Conceptualization
-        - Data curation
-        - Investigation
-        - Methodology
-        - Project administration
-        - Software
-        - Visualization
-        - Writing - original draft
-        - Writing - review & editing
+  - name: Hamza Tahiri
+    affiliations:
+    - Faculty of Science, Laboratory of Biology and Health, Abdelmalek Essaâdi University, Av. Khenifra, Tetouan, 93000, Morocco
+    - Department of Biology and Geology, Biological Engineering Laboratory, Sultan Moulay Slimane University, Beni-Mellal, Morocco
+    - Neuromatch
+    email: tahirihamza573@gmail.com
+    corresponding: true
 
-    - name: Razieh Zare
-      affiliations:
-        - Department of Linguistics, Faculty of Foreign languages, University of Isfahan, Isfahan, Iran
-        - Neuromatch
-      
-      roles:
-        - Conceptualization
-        - Investigation
-        - Methodology
-        - Project administration
-        - Software
-        - Writing - original draft
-        - Writing - review & editing
+    roles:
+    - Conceptualization
+    - Data curation
+    - Investigation
+    - Methodology
+    - Project administration
+    - Software
+    - Visualization
+    - Writing - original draft
+    - Writing - review & editing
 
-    - name: Fateme Amidizade
-      affiliations:
-        - Department of Educational Sciences and Psychology, Shiraz University, Shiraz, Iran
-        - Neuromatch
-      
-      roles:
-        - Conceptualization
-        - Formal analysis
-        - Investigation
-        - Methodology
-        - Project administration
-        - Writing - original draft
-        - Writing - review & editing
+  - name: Razieh Zare
+    affiliations:
+    - Department of Linguistics, Faculty of Foreign languages, University of Isfahan, Isfahan, Iran
+    - Neuromatch
 
+    roles:
+    - Conceptualization
+    - Investigation
+    - Methodology
+    - Project administration
+    - Software
+    - Writing - original draft
+    - Writing - review & editing
 
-    - name: Ibtissam Chakir
-      affiliations:
-        - Faculty of Science, Laboratory of Biology and Health, Abdelmalek Essaâdi University, Av. Khenifra, Tetouan, 93000, Morocco
-        - Department of Biology and Geology, Biological Engineering Laboratory, Sultan Moulay Slimane University, Beni-Mellal, Morocco
-        - Département de Biologie et Géologie FP Béni Mellal, USMS, Béni Mellal, Morocco
-      
-      roles:
-        - Resources
-        - Visualization
-        - Writing - review & editing
+  - name: Fateme Amidizade
+    affiliations:
+    - Department of Educational Sciences and Psychology, Shiraz University, Shiraz, Iran
+    - Neuromatch
 
+    roles:
+    - Conceptualization
+    - Formal analysis
+    - Investigation
+    - Methodology
+    - Project administration
+    - Writing - original draft
+    - Writing - review & editing
 
+  - name: Ibtissam Chakir
+    affiliations:
+    - Faculty of Science, Laboratory of Biology and Health, Abdelmalek Essaâdi University, Av. Khenifra, Tetouan, 93000, Morocco
+    - Department of Biology and Geology, Biological Engineering Laboratory, Sultan Moulay Slimane University, Beni-Mellal, Morocco
+    - Département de Biologie et Géologie FP Béni Mellal, USMS, Béni Mellal, Morocco
 
-    - name: Arvind Kumar
-      affiliations:
-        - Department of Computational Science and Technology, School of Electrical Engineering and Computer Science, KTH Royal Institute of Technology, 11428 Stockholm, Sweden Science for Life Laboratory, 171 65 Solna, Sweden
-        - Neuromatch
-      email: arvind.k.panchal@gmail.com
-      corresponding: true
-      
-      roles:
-        - Conceptualization
-        - Data curation
-        - Formal analysis
-        - Investigation
-        - Methodology
-        - Project administration
-        - Resources
-        - Supervision
-        - Validation
-        - Visualization
-        - Writing - review & editing
+    roles:
+    - Resources
+    - Visualization
+    - Writing - review & editing
+
+  - name: Arvind Kumar
+    affiliations:
+    - Department of Computational Science and Technology, School of Electrical Engineering and Computer Science, KTH Royal Institute of Technology, 11428 Stockholm, Sweden Science for Life Laboratory, 171 65 Solna, Sweden
+    - Neuromatch
+    email: arvind.k.panchal@gmail.com
+    corresponding: true
+
+    roles:
+    - Conceptualization
+    - Data curation
+    - Formal analysis
+    - Investigation
+    - Methodology
+    - Project administration
+    - Resources
+    - Supervision
+    - Validation
+    - Visualization
+    - Writing - review & editing
 
   toc:
-    - file: index.md
-    - file: Paper/supplement.md
+  - file: index.md
+  - file: Paper/supplement.md
 
   id: isp-tahiri-2026-working-memory-model
   title: "NMDA Modulates Working Memory Attractor Stability: Opposite Regimes Can Produce Schizophrenia-like Instability and OCD-like Overstability"
 
   keywords:
-    - working memory
-    - attractor networks
-    - NMDA
-    - schizophrenia
-    - OCD
-
-  
+  - working memory
+  - attractor networks
+  - NMDA
+  - schizophrenia
+  - OCD
 
   github: https://github.com/impact-scholars/tahiri-2026-working-memory-model
 
   bibliography:
-    - Paper/bib.bib
+  - Paper/bib.bib
 
   exports:
-    - format: typst
-      id: typst-pdf
-      template: https://github.com/impact-scholars/isp-lapreprint-typst.git
-      articles:
-        - file: index.md
-          title: null
-        - file: Paper/supplement.md
-          title: null
-
-
+  - format: typst
+    id: typst-pdf
+    template: https://github.com/impact-scholars/isp-lapreprint-typst.git
+    articles:
+    - file: index.md
+      title: null
+    - file: Paper/supplement.md
+      title: null
