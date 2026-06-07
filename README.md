@@ -1,3 +1,10 @@
+> **Archival Notice**  
+> This repository is the **permanent archival publication record** for an
+> Impact Scholars Program micropublication. The original development
+> repository is at 
+> **https://github.com/HamzaTh573/Working-Memory-Model-ISP**  
+> This archive preserves the version of record as accepted for publication.
+
 # Working Memory Model — Schizophrenia & OCD Simulations
 
 A biophysically realistic spiking neural network model of prefrontal-cortex working
