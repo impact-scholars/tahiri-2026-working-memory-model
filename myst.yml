@@ -108,6 +108,8 @@ project:
     template: https://github.com/impact-scholars/isp-lapreprint-typst.git
     articles:
     - file: index.md
-      title: null
+      title:
     - file: Paper/supplement.md
-      title: null
+      title:
+  doi: 10.5281/zenodo.20606254
+  date: 2026-06-09
