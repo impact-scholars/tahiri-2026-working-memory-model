@@ -98,6 +98,11 @@ project:
   - OCD
 
   github: https://github.com/impact-scholars/tahiri-2026-working-memory-model
+  options:
+    youtube: https://youtu.be/Sud1Lw9I3o4?t=3057
+  downloads:
+  - title: Seminar Presentation
+    url: https://youtu.be/Sud1Lw9I3o4?t=3057
 
   bibliography:
   - Paper/bib.bib
